@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+}
+#header{
+    margin:8px;
+    padding:4px;
+}
+#counter{
+    font-size:2em;
+    margin:4px;
+}
+button{
+    color:white;
+    background-color:#aa1111;
+    width:10em;
+    padding:0.4em;
+    margin:0.5em;
+    border-radius:1em;
+}
