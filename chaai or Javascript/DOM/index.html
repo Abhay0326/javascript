@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> #bg-color {background-color: black; color:white;} 
+    </style>
+    <title>Learning DOM</title>
+</head>
+<body id="bg-color">
+    <h1 id="title" class="heading border" onmouseenter="titleBorder()">DOM Manipulation Learning</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+    <button title="button" id="bt" type="button" name="Click_Me" onclick="test()"> Click Me</button>
+    <p id="test"></p>
+    <hr>
+    <h2 id="header2">Different types of Inner_tags <span style="display:none;">Hidden text</span></h2>
+    <input type="button" value="Click to Load" onclick="innerTags()"></input>
+    <p id="innerTag"></p>
+    <hr>
+
+    <p>QuarySelector</p>
+    <ul>
+        <li class="list-item">Apple</li>
+        <li class="list-item">Mango</li>
+        <li class="list-item">Banana</li>
+    </ul>
+    <script src="DOM_Manipulation.js"></script>
+</body>
+</html>
