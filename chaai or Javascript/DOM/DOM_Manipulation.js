@@ -4,6 +4,8 @@
  * document.getElementById("title").class //Return undefined as in backend class attribute reffer as className
  * document.getElementById("title").className //Return the value of class Attribute.
  * document.getElementById("title").getAttribute('class') //Return the value of class Attribute.
+ * document.getElementById("title").setAttribute('class','title') //change the value of the 'class' attribute to 'title'.
+ * 
  * 
  * document.getElementById("title").setAttribute("class","title") //This will replace complete value of the 'class' with 'title'. 
  * let title=document.getElementById("title");
