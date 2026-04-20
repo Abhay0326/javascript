@@ -1,0 +1,60 @@
+## 1. JavaScript Execution Context (JEC)
+Whenever you run a JavaScript file, the engine creates an environment to handle the execution. Think of this as a **"Manager’s Office"** being set up before any work starts.
+
+* **Global Execution Context (GEC):** This is the very first thing created. It’s like the "Main Headquarters." In a browser, this GEC is associated with the `window` object. 
+* **Function Execution Context:** Every time a function is called, a mini-office (sub-context) is opened just for that task.
+* **The `this` Keyword:** In the GEC, `this` refers to the global object (Window in browsers).
+
+> **Real-Life Example:** Imagine you are building a house. The **Global Context** is the entire construction site. Every time you hire a specialist (like a plumber or electrician), they bring their own **Function Context** (their specific tools and workspace) to perform their specific job.
+
+---
+
+## 2. The Two Phases of Execution
+JavaScript doesn't just start running code line-by-line immediately. It processes the code in two distinct "passes."
+
+### Phase 1: Memory Creation Phase (Creation Phase)
+The engine scans the code and allocates memory for variables and functions. 
+* **Variables:** Assigned a placeholder value of `undefined`.
+* **Functions:** The entire function definition is stored in memory.
+
+### Phase 2: Execution Phase
+The engine runs the code line-by-line.
+* It assigns actual values to variables (replacing `undefined`).
+* It performs calculations and "invokes" (calls) functions.
+
+> **Real-Life Example:** Think of a **Restaurant Kitchen**.
+> * **Memory Phase:** The chef reads the recipe and lays out all the ingredients (variables) and tools (functions) on the counter. He hasn't started cooking yet; he's just organizing.
+> * **Execution Phase:** The chef actually starts chopping, sautéing, and combining ingredients to produce the meal.
+
+---
+
+## 3. Function Execution & Sandboxing
+When a function is called (invoked), a brand new **Execution Context** is created. This context goes through its own Memory and Execution phases specifically for the variables *inside* that function. Once the function finishes and returns a value, this entire "mini-office" is deleted to save memory.
+
+> **Real-Life Example:** Think of **Disposable Cameras**. You open a new one (Function Call), take your photos (Execution), and once the film is developed and sent back to you (Return Value), the camera body is discarded (Context Deleted).
+
+---
+
+## 4. The Call Stack (LIFO)
+The Call Stack is a mechanism to keep track of multiple function calls. It follows the **LIFO (Last-In, First-Out)** principle.
+* The **Global Execution Context** sits at the very bottom.
+* When `Function A` is called, it’s pushed to the top.
+* If `Function A` calls `Function B`, then B is pushed on top of A.
+* When B finishes, it is "popped" off, then A finishes and is "popped" off.
+
+> **Real-Life Example:** Think of a **Stack of Dinner Plates**. 
+> You put Plate 1 down, then Plate 2 on top, then Plate 3. If you want to take a plate to use, you *must* take Plate 3 (the last one you added) first. You can't reach Plate 1 without removing the ones on top.
+
+---
+
+## 5. Visualizing via Browser Tools
+The video demonstrates how to use the **Sources** tab in Chrome DevTools to watch the Call Stack in real-time. By setting "Breakpoints," you can see functions being added to and removed from the stack as the code runs.
+
+### Summary Table: Code Execution Steps
+| Step | Phase | Action |
+| :--- | :--- | :--- |
+| **1** | **Global** | Create Global Execution Context and assign to `this`. |
+| **2** | **Memory** | Collect variables (set to `undefined`) and functions (store definitions). |
+| **3** | **Execution** | Assign values and run logic. |
+| **4** | **Function Call**| Create **new** sandbox (repeat steps 2 & 3 inside it). |
+| **5** | **Cleanup** | Function context is deleted after `return`. |
