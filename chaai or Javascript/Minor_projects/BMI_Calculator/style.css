@@ -1,0 +1,9 @@
+body{
+    background-color: #222;
+    color:white;
+}
+
+#result{
+    color:gray;
+    font-size:2em;
+}
