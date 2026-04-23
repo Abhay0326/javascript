@@ -1,0 +1,23 @@
+#buttons{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.button {
+    border:1.5px solid black; 
+    padding: 20px;
+    margin-right: 5px;
+    margin-top:1em;
+}
+#red{
+    background-color:red;
+}
+#green{
+    background-color:green;
+}
+#blue{
+    background-color:blue;
+}
+#yellow{
+    background-color:yellow;
+}
