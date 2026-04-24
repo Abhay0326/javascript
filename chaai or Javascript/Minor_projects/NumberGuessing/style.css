@@ -1,0 +1,35 @@
+body{
+    background-color: #222;
+    color:white;
+}
+#submit{
+    font-size: 15px;
+    text-decoration: none;
+    cursor:pointer;
+    border:1.5px solid gray;
+    color:gray;
+    background-color: black;
+}
+#submited:active{
+    border:none;
+}
+#msg{
+    text-align: center;
+    font-family: cursive;
+}
+h2{
+    text-align: center;
+}
+#contentBlock{
+    border:3px solid gray;
+    text-align: center;
+}
+#guess{
+    font-size:2em;
+}
+input{
+    margin: 10px;
+}
+#guessValue{
+    text-align: center;
+}
