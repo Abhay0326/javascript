@@ -1,0 +1,36 @@
+#**********Event Object properties and Methods************
+
+/*******Instance Properties*****/
+
+Event.bubbles -> A boolean value, which is true if the event bubbles up through the DOM tree.(Read-Only)
+Event.cancelable -> A boolean value, which is true if the event can be canceled. Then, we can cancel it by calling preventDefault().(Read-only)
+
+Event.currentTarget -> It return the Parent-Element on which we attached the eventHandler in code. So, It always return the same-Parent-Element irrespective of where the event is triggered.
+Event.target -> It return the exact-Child-Element from where the event is triggered irrespective of where the eventListener is actually set. So, It may return different element at each event based on the position of event triggered. 
+
+Event.defaultPrevented -> A boolean value, where true indicates that the default user agent action was prevented by preventDefault(), and false indicates that it was not.
+Event.timeStamp -> This value is the number of milliseconds elapsed from the beginning of the time origin until the event was created.If the global object is "Window", the time origin is the moment the user clicked on the link.
+
+/********Instance Methods*******/
+
+Event.preventDefault() -> Cancel the default function(s) of the Element if cancellable.
+Event.stopPropagation() -> Prevents further propagation of the current event in the capturing and bubbling phases. It only Stops all the Parent Listeners.
+Event.stopImmediatePropagation() -> It prevents the event from bubbling up and kills any remaining listeners on the same element immediately.It stops parent and other listeners on the Child.
+
+#***********Types Of Events****************
+
+Mouse Events:           click, dblclick, mousedown, mouseup, mouseenter, mouseleave.
+Keyboard Events:        keydown, keyup, keypress.
+Form Events:            submit, change, input, reset, select.
+Window Events:          load( over this preferred -> DOMContentLoaded), resize, scroll, unload, error, scroll, .
+Focus Events:           focus, blur, focusin, focusout.
+Drag and Drop Events:   drag, dragstart, dragend, drop.
+Media Events:           play, pause, ended, volumechange.
+Clipboard:	        copy, paste, cut         Controlling how data is copied from your app.
+
+/*********Essential Types of Coordinates*********/
+Coordinate Property,              Reference Point,			               Best Use Case
+clientX /clientY, ->   The Browser Viewport (visible area).,    	      Floating menus, custom cursors, or tooltips.
+pageX /pageY,     ->   The entire HTML Document (includes scrolled area).,    Placing elements in a long, scrollable page.
+offsetX /offsetY, ->   The target element (e.g., inside a specific <div>).    Drawing on a <canvas> or image interaction.
+screenX /screenY, ->   The User's Physical Monitor.,			      Dual-monitor setups or multi-window apps.
