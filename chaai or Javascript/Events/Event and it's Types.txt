@@ -22,7 +22,7 @@ Event.stopImmediatePropagation() -> It prevents the event from bubbling up and k
 Mouse Events:           click, dblclick, mousedown, mouseup, mouseenter, mouseleave.
 Keyboard Events:        keydown, keyup, keypress.
 Form Events:            submit, change, input, reset, select.
-Window Events:          load( over this preferred -> DOMContentLoaded), resize, scroll, unload, error, scroll, .
+Window Events:          load( over this preferred -> DOMContentLoaded), resize, scroll, unload, error .
 Focus Events:           focus, blur, focusin, focusout.
 Drag and Drop Events:   drag, dragstart, dragend, drop.
 Media Events:           play, pause, ended, volumechange.
