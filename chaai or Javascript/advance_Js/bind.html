@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Click Me!</button>
+</body>
+<script>
+    class react{
+        constructor(){
+            this.lib="React";
+            this.server="http://localhost:8000/"
+
+            document
+                .querySelector('button')
+                //To access the context of class-instance along with context of from where the function called.
+                //we have to bind them with that function call, as bellow.
+                .addEventListener(
+                    'click',
+                    this.handleClickEvent
+                        .bind(this)
+                )
+        }
+
+        handleClickEvent(){
+            console.log("Button Clicked")
+            //case-1: UnBind (anomalous behaviour of 'this')
+            // console.log(this) //here, 'this' will refer to the context of button-element. 
+            // console.log(this.server) //But, 'this' don't have context of class-instance.
+
+            //case-2:binded
+            console.log(this) //here, 'this' will refer to the context of whole react class. 
+            console.log(this.server) //Now, we can access the 
+        }
+    }
+
+    const newObj=new react();
+</script>
+</html>
