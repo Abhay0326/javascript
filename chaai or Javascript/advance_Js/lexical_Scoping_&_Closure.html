@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <button id="bt1">Blue</button>
+    <button id="bt2">Green</button>
+</body>
+<script>
+    //Lexical Scoping(inner function can access the scope of outer function(s))
+    //Lexical Scope: A static ruleset governing where variables are accessible based on code structure.	
+    //@COMPILE TIME
+    //NOTE: Even if we return another function inside a function.
+    //      It will always contain the whole 'lexical-scope' of parent function(s). 
+
+    //Case-1(access value)
+    function outer(){
+        let name="abhay"
+        function inner(){
+            //inner function have access to outer function(s) scope.
+            console.log("Inner function:",name)
+        }
+        inner()
+    }
+    outer()
+    console.log("Outer function:",name) //not accessible out of the function.
+
+    //Case-2(return function)
+    function outerMost(){
+        let username="Abhay Kumar"
+        function inner(){
+            console.log("Inner fn:",username);
+        }
+        return inner; //this will return the function with whole 'lexical-scope'.
+    }
+
+    let fun=new outerMost();
+    console.log(fun)
+    fun();
+</script>
+
+<script>
+    //Closure: An active function instance that "remembers" its outer variables even after the outer function has finished executing.
+    //@RUN TIME
+    //Use-Case of Closure and lexical-Scoping.
+    function clickHandler(color){
+        //NOTE:A Event required a callback-function NOT a 'function-refrence' or 'function-call'.
+        //     The bellow code will not work as expected.
+
+        //****TO handle this problem we have to return a callback-Function along with lexical-scope to access value of color.
+
+        // document.body.style.backgroundColor=`${color}`;
+
+        return function(){
+            document.body.style.backgroundColor=`${color}`
+        } //This will return the closure along with function.
+    }
+
+    document.getElementById("bt1").onclick=clickHandler("blue");
+    document.getElementById("bt2").onclick=clickHandler("green");
+</script>
+</html>
